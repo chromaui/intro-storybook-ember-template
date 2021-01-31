@@ -1,11 +1,17 @@
 {
   "name": "intro-storybook-ember-template",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Small description for intro-storybook-ember-template goes here",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chromaui/intro-storybook-ember-template"
+  },
+  "bugs": {
+    "url": "https://github.com/chromaui/intro-storybook-ember-template/issues"
+  },
   "license": "MIT",
-  "author": "",
+  "description": "Starter template to get up and running quickly with Ember and Storybook",
+  "author": "Chromatic <https://chromatic.com/>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -17,13 +23,26 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "npm-run-all lint:* test:*",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "storybook": "start-storybook -p 6006 -s dist --ci",
+    "storybook-dev": "npm-run-all --continue-on-error --parallel start storybook",
+    "prebuild-storybook": "ember build",
+    "build-storybook": "build-storybook -s dist"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
     "@ember/optional-features": "^2.0.0",
     "@glimmer/component": "^1.0.2",
     "@glimmer/tracking": "^1.0.2",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/ember": "^6.1.15",
+    "@storybook/ember-cli-storybook": "^0.3.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-ember-modules-api-polyfill": "^3.2.1",
+    "babel-plugin-htmlbars-inline-precompile": "^4.2.1",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.8.0",
     "ember-cli": "~3.23.0",
@@ -43,6 +62,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.23.1",
     "ember-template-lint": "^2.14.0",
+    "ember-truth-helpers": "^3.0.0",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^7.15.0",
     "eslint-plugin-ember": "^10.0.2",
@@ -56,5 +76,6 @@
   },
   "ember": {
     "edition": "octane"
-  }
+  },
+  "dependencies": {}
 }
